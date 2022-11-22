@@ -1,0 +1,24 @@
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('1', 'Iced Black Coffee', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('2', 'Cappuccino Cold Coffee', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('3', 'Creamy Iced Coffee', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('4', 'Iced Latte', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('5', 'Hot Black Coffee', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('6', 'Hot Cappuccino', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('7', 'Hot Espresso', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('8', 'Hot Latte', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('9', 'Strawberry Shake', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('10', 'Berry Lemonade Splash Regular', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('11', 'Mango Shake', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('12', 'Green Apple Chiller', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('13', 'Green Pear Smoothie', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('14', 'Aloo Tikki Burger', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('15', 'Spicy Paneer Burger', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('16', 'Veg Maharaja Burger', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('17', 'Chicken Maharaja Burger', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('18', 'Grilled Chicken & Cheese Burger', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('19', 'Creamy Tomato Pasta Pizza', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('20', 'Peppy Paneer Pizza', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('21', 'Tandoori Paneer Pizza', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('22', 'Pepper Barbecue Chicken', '0', '0', '0');
+INSERT INTO `menu_rating` (`id`, `dish_name`, `total_feedback_submitted`, `total_feedbacks`, `total_rating`) VALUES ('23', 'Chicken Golden Delight', '0', '0', '0');
+                                                                                                                    
