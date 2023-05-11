@@ -15,7 +15,7 @@ import com.cc.model.ItemFeedback;
 import com.cc.model.MenuRating;
 import com.cc.service.CollegeCafeServiceImpl;
 
-@CrossOrigin(origins = "http://192.168.0.108:8080/", maxAge = 3600)
+@CrossOrigin(origins = "http://ec2-3-80-74-184.compute-1.amazonaws.com/", maxAge = 3600) //Add public url of aws ec2 instance
 @RestController
 public class CafeController {
 	
