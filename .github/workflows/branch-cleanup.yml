@@ -15,8 +15,8 @@ jobs:
       uses: crs-k/stale-branches@v5.0.0
       with:
         repo-token:  ${{ github.token }}
-        days-before-stale: 275
-        days-before-delete: 365
+        days-before-stale: 45
+        days-before-delete: 90
         max-issues: 5
         comment-updates: false
         stale-branch-label: 'stale branch :wastebasket:'
