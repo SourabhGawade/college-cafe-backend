@@ -19,5 +19,5 @@ jobs:
           ignore-branches: "main, master, develop, qa, staging, , *main*, *master*"
           #ignore-prefixes: "feature/,bugfix/"
           last-commit-age-days: 90
-          dry-run: true
+          dry-run: false
           rate-limit: true
