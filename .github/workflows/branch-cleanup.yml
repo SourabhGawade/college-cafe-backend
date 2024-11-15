@@ -1,24 +1,18 @@
 name: remove_stale_branches
 
-on:
-  workflow_dispatch:
-    
-permissions:
-  issues: write
-  contents: write
+on: workflow_dispatch
 
 jobs:
-  stale_branches:
+  remove-stale-branches:
+    name: Remove Stale Branches
     runs-on: ubuntu-latest
     steps:
-    - name: Stale Branches
-      uses: crs-k/stale-branches@v5.0.0
-      with:
-        repo-token:  ${{ github.token }}
-        days-before-stale: 275
-        days-before-delete: 365
-        max-issues: 5
-        comment-updates: false
-        branches-filter-regex: '^(?!.(develop|qa|stage|staging|main|master)).$'
-        pr-check: true
-        #dry-run: true
+      - uses: fpicalausa/remove-stale-branches@v1.6.0
+        with:
+          github-token: $ {{ github.token }}
+          dry-run: true # Check out the console output before setting this to false
+          ignore-branches-with-open-prs: true
+          exempt-organization: "acme-inc"
+          exempt-authors-regex: ^(main|master|develop|qa|staging)$
+          days-before-branch-stale: 90
+          days-before-branch-delete: 0
