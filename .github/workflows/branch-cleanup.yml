@@ -1,21 +1,23 @@
-name: remove_stale_branches
+name: Cleanup Stale Branches
 
 permissions:
+  issues: write
   contents: write
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
-  remove-stale-branches:
-    name: Remove Stale Branches
+  cleanup-stale-branches:
     runs-on: ubuntu-latest
     steps:
-      - uses: fpicalausa/remove-stale-branches@v1.6.0
+      - name: Cleanup Stale Branches
+        uses: cbrgm/cleanup-stale-branches-action@v1
         with:
-          github-token: $ {{ github.token }}
-          dry-run: true # Check out the console output before setting this to false
-          ignore-branches-with-open-prs: true
-          exempt-organization: "acme-inc"
-          exempt-authors-regex: ^(main|master|develop|qa|staging)$
-          days-before-branch-stale: 90
-          days-before-branch-delete: 0
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          ignore-branches: "main, master, develop, qa, staging, , *main*, *master*"
+          #ignore-prefixes: "feature/,bugfix/"
+          last-commit-age-days: 90
+          dry-run: true
+          rate-limit: true
