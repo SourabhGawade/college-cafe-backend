@@ -19,8 +19,6 @@ jobs:
         days-before-delete: 90
         max-issues: 5
         comment-updates: false
-        stale-branch-label: 'stale branch :wastebasket:'
-        compare-branches: save
         branches-filter-regex: '^(?!.(develop|qa|stage|staging|main|master)).$'
         pr-check: true
         dry-run: true
