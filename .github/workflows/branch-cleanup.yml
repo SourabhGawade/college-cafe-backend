@@ -1,63 +1,26 @@
-name: Delete Old Branches
-permissions:
-  contents: write
+name: remove_stale_branches
+
 on:
-  workflow_dispatch:  # Allows manual triggering if needed
+  workflow_dispatch:
+    
+permissions:
+  issues: write
+  contents: write
 
 jobs:
-  delete-old-branches:
+  stale_branches:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository
-        uses: actions/checkout@v4
-
-      - name: Install jq and GitHub CLI
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y jq
-          sudo apt-get install -y gh
-
-      - name: Delete branches older than 12 months
-        env:
-          REPO: ${{ github.repository }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          # Get the date 12 months ago in ISO format
-          ONE_YEAR_AGO=$(date -d '12 months ago' --utc +%Y-%m-%dT%H:%M:%SZ)
-          echo "Deleting branches with last commit before: $ONE_YEAR_AGO"
-          
-          # Initialize a file to store branches that will be deleted
-          > branches_to_delete.txt
-          
-          # Fetch all branches and get the last commit date for each
-          gh api -X GET "repos/$REPO/branches" --paginate \
-            | jq -r '.[] | @base64' | while read branch_data; do
-                # Decode JSON data for each branch
-                branch_json=$(echo "$branch_data" | base64 --decode)
-                branch_name=$(echo "$branch_json" | jq -r '.name')
-
-                # Skip protected branches
-                if [[ "$branch_name" == "main" || "$branch_name" == "master" || "$branch_name" == "develop" || "$branch_name" == "qa" || "$branch_name" == "staging" ]]; then
-                  echo "Skipping protected branch: $branch_name"
-                  continue
-                fi
-
-                # Get the last commit date for the branch
-                last_commit_date=$(gh api -X GET "repos/$REPO/commits/$branch_name" | jq -r '.[0].commit.author.date')
-
-                # Check if the last commit date is older than 12 months
-                if [[ "$last_commit_date" < "$ONE_YEAR_AGO" ]]; then
-                  # Log branch to file and delete it
-                  echo "$branch_name" >> branches_to_delete.txt
-                  echo "Deleting branch: $branch_name (Last commit: $last_commit_date)"
-                  # gh api -X DELETE "repos/$REPO/git/refs/heads/$branch_name"
-                else
-                  echo "Keeping branch: $branch_name (Last commit: $last_commit_date)"
-                fi
-              done
-
-      - name: Upload deleted branches list
-        uses: actions/upload-artifact@v4
-        with:
-          name: deleted-branches
-          path: branches_to_delete.txt
+    - name: Stale Branches
+      uses: crs-k/stale-branches@v5.0.0
+      with:
+        repo-token:  ${{ github.token }}
+        days-before-stale: 275
+        days-before-delete: 365
+        max-issues: 5
+        comment-updates: false
+        stale-branch-label: 'stale branch :wastebasket:'
+        compare-branches: save
+        branches-filter-regex: '^(?!.(develop|qa|stage|staging|main|master)).$'
+        pr-check: true
+        dry-run: true
